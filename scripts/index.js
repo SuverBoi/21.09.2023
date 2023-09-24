@@ -1,39 +1,55 @@
-// імя
+const changeBgColor = (selector, color) => {
+    const element = document.querySelector(selector)
+    element.style.backgroundColor = color;
+}
 
-let name = prompt("Введіть ваше ім'я: ");
-alert("Привіт, " + name +"!");
+// start point
+document.addEventListener("DOMContentLoaded", ()=>{
+    // get elements
+    const RED_BTN = document.querySelector("#red");
+    // const NAME = document.querySelectorAll(".form__name")
+    // const NAME = document.getElementsByClassName("form__name")[0]
+    const FORM = document.querySelector(".form")
+    const SHOW_ELEMENTS_BTN = document.querySelector(".show_element")
+    
+    
+    // add listeners
+    // NAME.addEventListener("change", (e)=>{
+    //     const USER_NAME = e.target.value;
+    // })
+    FORM.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        // get elements
+        const NAME = document.querySelector(".form__name");
+        const USER_NAME = NAME.value;
+        const PHONE = document.querySelector(".form__phone");
+        const USER_PHONE = PHONE.value;
+        const MAIL = document.querySelector(".form__mail");
+        const USER_MAIL =MAIL.value;
+        const NUMBER = document.querySelector(".form__number");
+        const USER_NUMBER = NUMBER.value;
+        const DATE = document.querySelector(".form__date");
+        const USER_DATE = DATE.value;
+        const TIME = document.querySelector(".form__time");
+        const USER_TIME = TIME.value;
+        const COM = document.querySelector(".form__comm");
+        const USER_COM = COM.value;
+       
+        
+        
+        console.log(USER_NAME)
+        console.log(USER_PHONE)
+        console.log(USER_MAIL)
+        console.log(USER_NUMBER)
+        console.log(USER_DATE)
+        console.log(USER_TIME)
+        console.log(USER_COM)
+        alert("Your request sended!")
+    })
 
-// вік
-
-const year = 2023
-let age = prompt("Введіть ваш вік: ");
-let birth = age - year
-alert("Ваш вік: " + birth)
-
-// квадрат
-
-let storona = prompt("Введіть сторону квадрата: ");
-let perimetr = storona*4
-alert("Периметр: " + perimetr)
-
-// коло
-
-let storon = prompt("Введіть сторону кола: ");
-let perimet = storona*4
-alert("Периметр: " + perimet)
-
-// валюти
-
-const USD = 39.9
-let conv = prompt("Скільки у вас грн?");
-let convent = conv/USD
-alert("Ваші доляри: " + convent+"$")
-
-// парне не парне
-
-let chislo = prompt("Введіть число: ");
-const isEven = chislo % 2 === 0;
-
-const result = isEven ? "парне" : "непарне";
-alert(`Це число - ${result}.`);
-// там чат gpt поміг я оператори забув просто
+    
+    // RED_BTN.addEventListener("click", (e)=>{
+    //     e.preventDefault();
+    //     changeBgColor("body", "#f00");
+    // })
+})
